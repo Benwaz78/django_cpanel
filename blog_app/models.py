@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from tinymce import models as tinymce_models
-from fontawesome_5.fields import IconField
 from django.conf import settings
 
 
@@ -77,7 +76,6 @@ class Comment(models.Model):
 
 class ServiceModel(models.Model):
     title = models.CharField(max_length=150)
-    icon = IconField(blank=True, null=True)
     content = tinymce_models.HTMLField('Content', blank=True, null=True)
 
     class Meta():
